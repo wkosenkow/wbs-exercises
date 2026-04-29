@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono Travel Agency</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER: Flexbox layout -->
+    <header class="site-header">
+        <div class="logo">
+            <span class="logo-icon">🐾</span>
+            <span class="logo-text">Chrono<strong>Travel</strong></span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn btn-outline">Book a Trip</a>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Est. ∞ BC — Present Day</p>
+                <h1>The Past is Your<br><em>Destination</em></h1>
+                <p class="hero-sub">Explore any era in history — from the dinosaurs to the roaring twenties. All trips guaranteed or your time back.</p>
+            </div>
+            <div class="hero-image">
+                <img src="dino.jpg" alt="T-Rex dinosaur — Jurassic style">
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about">
+            <div class="about-inner">
+                <h2>Travel Without Limits</h2>
+                <p>ChronoTravel has been sending bold explorers through the time-stream since the invention of the chronotron engine. Our certified Temporal Navigators will keep you safe while you witness history firsthand — no paradoxes, no problem.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">14,000+</span>
+                        <span class="stat-label">Eras Visited</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.8%</span>
+                        <span class="stat-label">Paradox-Free Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Certified Navigators</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- GALLERY SECTION: CSS Grid layout -->
+        <section id="gallery" class="gallery">
+            <h2>Postcards from the Timeline</h2>
+            <p class="section-sub">Real photos from our travellers — or close enough.</p>
+            <div class="gallery-grid">
+                <figure class="gallery-item large">
+                    <img src="https://picsum.photos/seed/ancient/800/600" alt="Ancient ruins at sunset">
+                    <figcaption>Ancient Rome, 44 BC</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/jungle/400/400" alt="Lush prehistoric jungle">
+                    <figcaption>Cretaceous Jungle, 66M BC</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/future1/400/400" alt="Futuristic cityscape">
+                    <figcaption>New York, 2074</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/jazz1/400/400" alt="Jazz club interior">
+                    <figcaption>Harlem Jazz Club, 1926</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://picsum.photos/seed/egypt1/400/400" alt="Pyramids being built">
+                    <figcaption>Giza, 2560 BC</figcaption>
+                </figure>
+                <figure class="gallery-item wide">
+                    <img src="https://picsum.photos/seed/space1/800/400" alt="Space panorama">
+                    <figcaption>Low Earth Orbit, 1969 — watching the Moon landing live</figcaption>
+                </figure>
+            </div>
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact">
+            <div class="contact-inner">
+                <h2>Ready to Travel Through Time?</h2>
+                <p>Fill out the form below and one of our Temporal Navigators will be in touch — almost instantly, thanks to time travel.</p>
+                <form class="contact-form" onsubmit="return false;">
+                    <div class="form-row">
+                        <label for="name">Your Name
+                            <input type="text" id="name" placeholder="Ada Lovelace">
+                        </label>
+                        <label for="email">Email Address
+                            <input type="email" id="email" placeholder="ada@chronotravel.io">
+                        </label>
+                    </div>
+                    <label for="era">Desired Era
+                        <select id="era">
+                            <option value="">-- Select a package --</option>
+                            <option>Jurassic Express</option>
+                            <option>Ancient Civilizations</option>
+                            <option>Future Forward</option>
+                            <option>Roaring Twenties</option>
+                        </select>
+                    </label>
+                    <label for="message">Tell us about your dream trip
+                        <textarea id="message" rows="4" placeholder="I've always wanted to see..."></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-lg">Send My Enquiry</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: Flexbox layout -->
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <span class="logo-icon">🐾</span>
+            <span class="logo-text">Chrono<strong>Travel</strong></span>
+            <p>All trips comply with the Temporal Regulation Act of 2031. No paradoxes guaranteed.</p>
+        </div>
+        <nav class="footer-nav">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <nav class="footer-nav">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Paradox Waiver</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">TRA Compliance</a></li>
+            </ul>
+        </nav>
+        <div class="footer-contact">
+            <h4>Get in Touch</h4>
+            <p>📍 1 Infinity Loop, Time City</p>
+            <p>📞 +1 (888) PAST-NOW</p>
+            <p>✉️ hello@chronotravel.io</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChronoTravel. All rights reserved across all timelines.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

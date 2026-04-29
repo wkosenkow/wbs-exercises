@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #008080;
+  font-family: Tahoma, 'MS Sans Serif', Arial, sans-serif;
+  margin: 0;
+}
+
+/* ── Window shell ── */
+.window {
+  width: 430px;
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: 1px 1px 0 #808080, 2px 2px 6px rgba(0,0,0,0.6);
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Title bar ── */
+.border {
+  height: 28px;
+  background: linear-gradient(to right,
+    #1254aa 0%,
+    #4a90d9 35%,
+    #5ba3e8 50%,
+    #4a90d9 65%,
+    #1254aa 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  gap: 6px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Title text */
+.border-title {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  letter-spacing: 0.2px;
+  flex: 1;
+}
+
+/* ── Dialog body ── */
+.dialog-body {
+  display: flex;
+  align-items: center;
+  padding: 20px 18px 16px 16px;
+  gap: 16px;
+  flex: 1;
+}
+
+.dialog-body p {
+  margin: 0;
+  font-size: 13px;
+  color: #000;
+  line-height: 1.5;
+}
+
+/* ── Button row ── */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 12px 12px;
+}
+
+.btn-cancel {
+  padding: 4px 20px;
+  min-width: 80px;
+  background: linear-gradient(to bottom, #f0ece0 0%, #d4d0c8 100%);
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  color: #000;
+}
+
+.btn-cancel:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coding School – Sign Up</title>
+  </head>
+  <body>
+    <main>
+      <h1>Coding School – Sign Up</h1>
+      <p>Join us! Fill in the form below to apply for a bootcamp.</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="full-name">Full Name</label><br />
+          <input type="text" id="full-name" name="full-name" required /><br />
+
+          <label for="email">Email Address</label><br />
+          <input type="email" id="email" name="email" required /><br />
+
+          <label for="telephone">Telephone Number</label><br />
+          <input type="tel" id="telephone" name="telephone" required /><br />
+
+          <label for="password">Password</label><br />
+          <input type="password" id="password" name="password" required />
+          <button type="button" onclick="
+            var input = document.getElementById('password');
+            input.type = input.type === 'password' ? 'text' : 'password';
+          ">Show</button><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Bootcamp Selection</legend>
+
+          <label for="bootcamp">Which bootcamp are you interested in?</label><br />
+          <select id="bootcamp" name="bootcamp" required>
+            <option value="">-- Please select --</option>
+            <option value="web-dev">Web Development</option>
+            <option value="data-science">Data Science</option>
+            <option value="ux-design">UX Design</option>
+            <option value="cybersecurity">Cybersecurity</option>
+          </select>
+        </fieldset>
+
+        <button type="submit">Apply Now</button>
+      </form>
+    </main>
+  </body>
+</html>
