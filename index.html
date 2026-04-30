@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vladimir's Projects</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    a.card {
+      display: block;
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px 20px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    a.card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    a.card h2 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    a.card span {
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vladimir's Projects</h1>
+  <p class="subtitle">WBS Bootcamp exercises</p>
+  <div class="grid">
+    <a class="card" href="coffee-shop-website/"><h2>Coffee Shop</h2><span>HTML basics</span></a>
+    <a class="card" href="coffee-shop-website-css/"><h2>Coffee Shop – CSS</h2><span>Styling</span></a>
+    <a class="card" href="coffee-shop-website-responsive/"><h2>Coffee Shop – Responsive</h2><span>Media queries</span></a>
+    <a class="card" href="coffee-shop-website-semantic/"><h2>Coffee Shop – Semantic</h2><span>Semantic HTML</span></a>
+    <a class="card" href="Dog Adoption/"><h2>Dog Adoption</h2><span>HTML basics</span></a>
+    <a class="card" href="dog-adoption-css/"><h2>Dog Adoption – CSS</h2><span>Styling</span></a>
+    <a class="card" href="dog-adoption-semantic/"><h2>Dog Adoption – Semantic</h2><span>Semantic HTML</span></a>
+    <a class="card" href="html-resume/"><h2>HTML Resume</h2><span>HTML basics</span></a>
+    <a class="card" href="html-resume-css/"><h2>HTML Resume – CSS</h2><span>Styling</span></a>
+    <a class="card" href="html-resume-semantic/"><h2>HTML Resume – Semantic</h2><span>Semantic HTML</span></a>
+    <a class="card" href="flexbox/"><h2>Flexbox</h2><span>CSS layout</span></a>
+    <a class="card" href="grid/"><h2>Grid</h2><span>CSS layout</span></a>
+    <a class="card" href="sign-up-form/"><h2>Sign Up Form</h2><span>Forms</span></a>
+    <a class="card" href="time-travel-agency/"><h2>Time Travel Agency</h2><span>Project</span></a>
+    <a class="card" href="windows-nostalgia/"><h2>Windows Nostalgia</h2><span>Project</span></a>
+    <a class="card" href="CSS/"><h2>CSS Exercises</h2><span>CSS practice</span></a>
+  </div>
+</body>
+</html>
