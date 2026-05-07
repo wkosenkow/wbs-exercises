@@ -4,37 +4,125 @@
     <title>Vlad Kosenkov</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style-v2.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: '#1e3a5f',
+              'accent-light': '#2f5f9e',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @page {
+        size: A4;
+        margin: 1.2cm;
+      }
+
+      @media print {
+        /* ID selector (1,0,0) beats any Tailwind class (0,1,0) — no !important needed */
+
+        #resume {
+          font-size: 0.8rem;
+          line-height: 1.35;
+          box-shadow: none;
+          border-radius: 0;
+          max-width: 100%;
+          margin: 0;
+        }
+
+        #resume > header {
+          flex-direction: row;
+          text-align: left;
+          padding: 0.5rem 0.75rem;
+          gap: 0.75rem;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        #resume > header img {
+          width: 80px;
+          height: 80px;
+        }
+        #resume > header h1 {
+          font-size: 1.2rem;
+        }
+        #resume > header address {
+          margin-top: 0.15rem;
+        }
+        #resume > header address ul {
+          justify-content: flex-start;
+          gap: 0.1rem 0.6rem;
+        }
+
+        #resume > main {
+          padding: 0.3rem 0.75rem;
+        }
+
+        #resume > main > section {
+          margin-bottom: 0.12rem;
+        }
+        #resume > main > section:last-child {
+          margin-bottom: 0;
+        }
+        #resume > main > section > h2 {
+          margin-bottom: 0.12rem;
+          padding-bottom: 0.06rem;
+        }
+
+        #resume > main > section > article {
+          margin-bottom: 0.1rem;
+        }
+        #resume > main > section > article:last-child {
+          margin-bottom: 0;
+        }
+        #resume > main > section > article > header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 0.04rem;
+          gap: 0.5rem;
+        }
+        #resume > main > section > article ul {
+          gap: 0;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-zinc-100 font-sans leading-relaxed text-[#1a1a2e]">
 
-    <div class="page">
+    <div id="resume" class="max-w-3xl mx-auto my-0 sm:my-8 bg-white sm:rounded-lg sm:shadow-md overflow-hidden print:my-0 print:rounded-none print:shadow-none print:max-w-full">
 
-      <header class="header">
-        <figure class="header__photo">
+      <header class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 px-4 py-6 sm:p-8 bg-accent text-white text-center sm:text-left">
+        <figure class="flex-shrink-0">
           <img
             src="DSC_646_Dgt.jpeg"
             alt="Vlad Kosenkov"
+            class="block w-32 h-32 rounded-full object-cover object-top border-2 border-white/30"
           />
         </figure>
-        <div class="header__info">
-          <h1 class="header__name">Vlad Kosenkov</h1>
-          <p class="header__title">Product Lead · Berlin, Germany</p>
-          <address class="header__contact">
-            <ul>
-              <li><a href="mailto:vladimir.kosenkov@mba2016.esmt.org">vladimir.kosenkov@mba2016.esmt.org</a></li>
-              <li><a href="tel:+491625964284">+49 162 596 4284</a></li>
-              <li><a href="https://linkedin.com/in/vkosenkov">linkedin.com/in/vkosenkov</a></li>
+        <div>
+          <h1 class="text-[1.75rem] font-bold tracking-tight">Vlad Kosenkov</h1>
+          <p class="text-[0.95rem] text-white/75 mt-1">Product Lead · Berlin, Germany</p>
+          <address class="mt-3 not-italic">
+            <ul class="list-none flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-1">
+              <li><a href="mailto:vladimir.kosenkov@mba2016.esmt.org" class="text-white/85 text-[0.85rem] no-underline hover:text-white hover:underline">vladimir.kosenkov@mba2016.esmt.org</a></li>
+              <li><a href="tel:+491625964284" class="text-white/85 text-[0.85rem] no-underline hover:text-white hover:underline">+49 162 596 4284</a></li>
+              <li><a href="https://linkedin.com/in/vkosenkov" class="text-white/85 text-[0.85rem] no-underline hover:text-white hover:underline">linkedin.com/in/vkosenkov</a></li>
             </ul>
           </address>
         </div>
       </header>
 
-      <main class="main">
+      <main class="px-4 py-6 sm:p-8">
 
-        <section class="section">
-          <h2 class="section__heading">Summary</h2>
-          <p>
+        <!-- Summary -->
+        <section class="mb-12">
+          <h2 class="text-[0.7rem] font-bold uppercase tracking-[1.5px] text-accent-light border-b-2 border-gray-200 pb-2 mb-6">Summary</h2>
+          <p class="max-w-[72ch] text-[#5a6072] text-[0.95rem]">
             Product manager with 10+ years building data-driven platform and API products across retail media,
             e-commerce, adtech, and enterprise environments. Track record of owning products at billion-euro
             scale — from retail media APIs to inventory optimization and internal tooling. Combining platform
@@ -43,142 +131,156 @@
           </p>
         </section>
 
-        <section class="section">
-          <h2 class="section__heading">Skills</h2>
-          <ul class="skills">
-            <li><strong>Product Management:</strong> Product Strategy · Roadmapping · User Discovery · A/B Testing · Prioritization · Agile/Scrum · Stakeholder Management · OKRs · Go-to-Market</li>
-            <li><strong>Technical &amp; AI:</strong> API Design · Platform Architecture · Data Pipelines · Machine Learning · LLMs · Prompt Engineering · AI Agents · RAG · Automation</li>
-            <li><strong>Data &amp; Analytics:</strong> SQL · Python · Product Analytics · KPI Frameworks · Experimentation</li>
-            <li><strong>Domain:</strong> Retail Media · Adtech · E-Commerce · Monetization · Inventory Optimization · Customer Data Platforms</li>
+        <!-- Skills -->
+        <section class="mb-12">
+          <h2 class="text-[0.7rem] font-bold uppercase tracking-[1.5px] text-accent-light border-b-2 border-gray-200 pb-2 mb-6">Skills</h2>
+          <ul class="list-none flex flex-col sm:grid sm:grid-cols-2 gap-2 sm:gap-x-8 sm:gap-y-3 text-[0.9rem] text-[#5a6072]">
+            <li><strong class="text-[#1a1a2e]">Product Management:</strong> Product Strategy · Roadmapping · User Discovery · A/B Testing · Prioritization · Agile/Scrum · Stakeholder Management · OKRs · Go-to-Market</li>
+            <li><strong class="text-[#1a1a2e]">Technical &amp; AI:</strong> API Design · Platform Architecture · Data Pipelines · Machine Learning · LLMs · Prompt Engineering · AI Agents · RAG · Automation</li>
+            <li><strong class="text-[#1a1a2e]">Data &amp; Analytics:</strong> SQL · Python · Product Analytics · KPI Frameworks · Experimentation</li>
+            <li><strong class="text-[#1a1a2e]">Domain:</strong> Retail Media · Adtech · E-Commerce · Monetization · Inventory Optimization · Customer Data Platforms</li>
           </ul>
         </section>
 
-        <section class="section">
-          <h2 class="section__heading">Experience</h2>
+        <!-- Experience -->
+        <section class="mb-12">
+          <h2 class="text-[0.7rem] font-bold uppercase tracking-[1.5px] text-accent-light border-b-2 border-gray-200 pb-2 mb-6">Experience</h2>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 mb-2">
               <div>
-                <h3 class="entry__title">Senior Product Manager</h3>
-                <p class="entry__org">Schwarz Digits, Berlin — Tech division of Schwarz Gruppe (Lidl &amp; Kaufland), €150B revenue</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Senior Product Manager</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Schwarz Digits, Berlin — Tech division of Schwarz Gruppe (Lidl &amp; Kaufland), €150B revenue</p>
               </div>
-              <time class="entry__date">2023–2025</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2023–2025</time>
             </header>
-            <ul class="entry__list">
-              <li>Led end-to-end launch of a retail media API unifying ad delivery across Lidl and Kaufland digital channels, enabling scalable monetization across web and loyalty apps</li>
-              <li>Scaled from one to multiple ad placements across client apps, driving incremental revenue capacity and advertiser flexibility</li>
-              <li>Designed metrics and reporting framework for sales and operations, enabling data-driven campaign performance optimization</li>
+            <ul class="list-disc pl-4 flex flex-col gap-2">
+              <li class="text-[0.9rem] text-[#5a6072]">Led end-to-end launch of a retail media API unifying ad delivery across Lidl and Kaufland digital channels, enabling scalable monetization across web and loyalty apps</li>
+              <li class="text-[0.9rem] text-[#5a6072]">Scaled from one to multiple ad placements across client apps, driving incremental revenue capacity and advertiser flexibility</li>
+              <li class="text-[0.9rem] text-[#5a6072]">Designed metrics and reporting framework for sales and operations, enabling data-driven campaign performance optimization</li>
             </ul>
           </article>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 mb-2">
               <div>
-                <h3 class="entry__title">Senior Product Manager</h3>
-                <p class="entry__org">Zalando, Berlin — EU's leading fashion e-commerce platform, €10B revenue</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Senior Product Manager</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Zalando, Berlin — EU's leading fashion e-commerce platform, €10B revenue</p>
               </div>
-              <time class="entry__date">2021–2022</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2021–2022</time>
             </header>
-            <ul class="entry__list">
-              <li>Partnered with buying and merchandising teams to optimize a €1B stock inventory, improving allocation accuracy</li>
-              <li>Led discovery with brand partners to reshape product roadmap toward aggressive revenue growth plans</li>
-              <li>Diagnosed usability gaps in internal merchandising platform and led improvements that increased NPS from 0 to 30</li>
+            <ul class="list-disc pl-4 flex flex-col gap-2">
+              <li class="text-[0.9rem] text-[#5a6072]">Partnered with buying and merchandising teams to optimize a €1B stock inventory, improving allocation accuracy</li>
+              <li class="text-[0.9rem] text-[#5a6072]">Led discovery with brand partners to reshape product roadmap toward aggressive revenue growth plans</li>
+              <li class="text-[0.9rem] text-[#5a6072]">Diagnosed usability gaps in internal merchandising platform and led improvements that increased NPS from 0 to 30</li>
             </ul>
           </article>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 mb-2">
               <div>
-                <h3 class="entry__title">Product Manager</h3>
-                <p class="entry__org">Dunnhumby Media, Berlin — Global leader in Customer Data Science, owned by Tesco, €80B revenue</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Product Manager</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Dunnhumby Media, Berlin — Global leader in Customer Data Science, owned by Tesco, €80B revenue</p>
               </div>
-              <time class="entry__date">2019–2021</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2019–2021</time>
             </header>
-            <ul class="entry__list">
-              <li>Owned the build of an internal advertising platform supporting a $30M UK onsite media business for 100+ users</li>
-              <li>Facilitated launching Central EU market worth $5M, coordinating cross-functional delivery</li>
+            <ul class="list-disc pl-4 flex flex-col gap-2">
+              <li class="text-[0.9rem] text-[#5a6072]">Owned the build of an internal advertising platform supporting a $30M UK onsite media business for 100+ users</li>
+              <li class="text-[0.9rem] text-[#5a6072]">Facilitated launching Central EU market worth $5M, coordinating cross-functional delivery</li>
             </ul>
           </article>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 mb-2">
               <div>
-                <h3 class="entry__title">Product Manager</h3>
-                <p class="entry__org">Trim, Berlin — Real-time demand-driven clothing manufacturing platform</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Product Manager</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Trim, Berlin — Real-time demand-driven clothing manufacturing platform</p>
               </div>
-              <time class="entry__date">2017–2018</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2017–2018</time>
             </header>
-            <ul class="entry__list">
-              <li>Led 0→1 launches of two consumer-facing products and an internal OMS, strengthening the B2B sales pipeline</li>
+            <ul class="list-disc pl-4 flex flex-col gap-2">
+              <li class="text-[0.9rem] text-[#5a6072]">Led 0→1 launches of two consumer-facing products and an internal OMS, strengthening the B2B sales pipeline</li>
             </ul>
           </article>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 mb-2">
               <div>
-                <h3 class="entry__title">Tech Product Manager</h3>
-                <p class="entry__org">Adidas, Moscow</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Tech Product Manager</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Adidas, Moscow</p>
               </div>
-              <time class="entry__date">2015–2016</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2015–2016</time>
             </header>
-            <ul class="entry__list">
-              <li>Led NPS measurement system across 200 stores (500 iPads), supporting Adidas' global loyalty-driven growth strategy</li>
+            <ul class="list-disc pl-4 flex flex-col gap-2">
+              <li class="text-[0.9rem] text-[#5a6072]">Led NPS measurement system across 200 stores (500 iPads), supporting Adidas' global loyalty-driven growth strategy</li>
             </ul>
           </article>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article>
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 mb-2">
               <div>
-                <h3 class="entry__title">Ticketing Product Manager</h3>
-                <p class="entry__org">Sochi 2014 Olympic Organising Committee &amp; Sochi Autodrom (Formula 1 GP Russia)</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Ticketing Product Manager</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Sochi 2014 Olympic Organising Committee &amp; Sochi Autodrom (Formula 1 GP Russia)</p>
               </div>
-              <time class="entry__date">2013–2015</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2013–2015</time>
             </header>
-            <ul class="entry__list">
-              <li>Managed €30M ticket sales and distribution for the first Formula 1 GP in Russia; integrated access control across all Olympic venues with the Eventim ticketing platform</li>
+            <ul class="list-disc pl-4 flex flex-col gap-2">
+              <li class="text-[0.9rem] text-[#5a6072]">Managed €30M ticket sales and distribution for the first Formula 1 GP in Russia; integrated access control across all Olympic venues with the Eventim ticketing platform</li>
             </ul>
           </article>
 
         </section>
 
-        <section class="section">
-          <h2 class="section__heading">Education</h2>
+        <!-- Education -->
+        <section class="mb-12">
+          <h2 class="text-[0.7rem] font-bold uppercase tracking-[1.5px] text-accent-light border-b-2 border-gray-200 pb-2 mb-6">Education</h2>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
               <div>
-                <h3 class="entry__title">Le Wagon</h3>
-                <p class="entry__org">Data Science Bootcamp</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">WBS Coding School</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">AI Software Development Bootcamp</p>
               </div>
-              <time class="entry__date">2021</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2026</time>
             </header>
           </article>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
               <div>
-                <h3 class="entry__title">ESMT Berlin</h3>
-                <p class="entry__org">MBA</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Le Wagon</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Data Science Bootcamp</p>
               </div>
-              <time class="entry__date">2016</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2021</time>
             </header>
           </article>
 
-          <article class="entry">
-            <header class="entry__header">
+          <article class="mb-6">
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
               <div>
-                <h3 class="entry__title">Lomonosov MSU</h3>
-                <p class="entry__org">Master's in Mathematics</p>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">ESMT Berlin</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">MBA</p>
               </div>
-              <time class="entry__date">2007</time>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2016</time>
+            </header>
+          </article>
+
+          <article>
+            <header class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
+              <div>
+                <h3 class="text-base font-semibold text-[#1a1a2e]">Lomonosov MSU</h3>
+                <p class="text-[0.85rem] text-[#5a6072] mt-1">Master's in Mathematics</p>
+              </div>
+              <time class="text-[0.8rem] font-semibold text-accent-light whitespace-nowrap flex-shrink-0 sm:pt-0.5">2007</time>
             </header>
           </article>
 
         </section>
 
-        <section class="section">
-          <h2 class="section__heading">Languages</h2>
-          <p><strong>Russian</strong> — Native · <strong>English</strong> — C2 · <strong>German</strong> — B2 · <strong>French</strong> — B1</p>
+        <!-- Languages -->
+        <section>
+          <h2 class="text-[0.7rem] font-bold uppercase tracking-[1.5px] text-accent-light border-b-2 border-gray-200 pb-2 mb-6">Languages</h2>
+          <p class="text-[0.95rem] text-[#5a6072]"><strong class="text-[#1a1a2e]">Russian</strong> — Native · <strong class="text-[#1a1a2e]">English</strong> — C2 · <strong class="text-[#1a1a2e]">German</strong> — B2 · <strong class="text-[#1a1a2e]">French</strong> — B1</p>
         </section>
 
       </main>
